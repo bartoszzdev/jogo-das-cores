@@ -9,7 +9,7 @@
     text-align: center;
     color: #fff;
     background-color: rgba(153, 209, 231, 0.767);
-    box-shadow: 5px 0 12px rgba(0, 0, 0, 0.644)
+    box-shadow: 5px 0 12px rgba(0, 0, 0, 0.315)
 }
 
 .title {
@@ -29,6 +29,24 @@
     background-color: #fff;
 }
 
+.info a {
+    text-decoration: none;
+}
+
+.btn {
+    padding: 5px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(153, 209, 231, 0.767);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 500ms;
+    margin-left: -10px
+}
+
 #reset {
     padding: 5px 15px;
     font-size: 18px;
@@ -42,7 +60,7 @@
     transition: background-color 500ms
 }
 
-#reset:hover {
+#reset:hover, .btn:hover {
     color: #fff;
     background: rgba(153, 209, 231, 0.767);
 }
@@ -50,7 +68,7 @@
 #message {
     padding: 5px 0;
     font-size: 15px;
-    color: #000
+    color: #000;
 }
 
 .main-box {
@@ -60,7 +78,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border: 1px solid #000
 }
 
 .box {
@@ -68,5 +85,6 @@
     padding-bottom: 30%;
     margin: 7px;
     border-radius: 25px;
-    border: 1px solid #000;
+    cursor: pointer;
+    transition: opacity 700ms
 }
