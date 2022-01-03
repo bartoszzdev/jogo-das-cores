@@ -14,11 +14,16 @@ setupBox()
 
 resetBtn.addEventListener("click", () => {
     colorHex = "#"
+    items.sort(() => 0.5 - Math.random())
     container.style.backgroundColor = "rgba(153, 209, 231, 0.767)"
     resetBtn.value = "Novas cores"
     message.textContent = ""
     renderHexColor()
     renderBoxColor()
+
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].style.opacity = 1
+    }
 })
 
 function renderHexColor() {
