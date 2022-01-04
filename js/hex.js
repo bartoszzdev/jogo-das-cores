@@ -70,7 +70,7 @@ function setupBox() {
 
             if (boxClicked.backgroundColor === hexToRgbColor) {
                 container.style.backgroundColor = colorHex
-                resetBtn.value = "Deseja jogar mais uma vez?"
+                resetBtn.value = "Jogar novamente"
                 message.textContent = "Acertou!"
 
                 for (let i = 0; i < boxes.length; i++) {
