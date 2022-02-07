@@ -1,24 +1,24 @@
-const colorDisplay = document.getElementById("colorDisplay")
-const container = document.querySelector(".container")
-const resetBtn = document.getElementById("reset")
-const message = document.getElementById("message")
-const boxes = document.querySelectorAll(".box")
+const colorDisplayRgb = document.getElementById("colorDisplay")
+const containerRgb = document.querySelector(".container")
+const resetBtnRgb = document.getElementById("reset")
+const messageRgb = document.getElementById("message")
+const boxesRgb = document.querySelectorAll(".box")
 let colorRgb = ""
 
 renderRgbColor()
 renderBoxColor()
 setupBox()
 
-resetBtn.addEventListener("click", () => {
+resetBtnRgb.addEventListener("click", () => {
     colorRgb = ""
-    container.style.backgroundColor = "rgba(153, 209, 231, 0.767)"
-    resetBtn.value = "Novas cores"
-    message.textContent = ""
+    containerRgb.style.backgroundColor = "rgba(153, 209, 231, 0.767)"
+    resetBtnRgb.value = "Novas cores"
+    messageRgb.textContent = ""
     renderRgbColor()
     renderBoxColor()
 
-    for (let i = 0; i < boxes.length; i++) {
-        boxes[i].style.opacity = 1
+    for (let i = 0; i < boxesRgb.length; i++) {
+        boxesRgb[i].style.opacity = 1
     }
 })
 
@@ -29,19 +29,19 @@ function renderRgbColor() {
 
     colorRgb = `rgb(${r}, ${g}, ${b})`
  
-    colorDisplay.textContent = colorRgb
+    colorDisplayRgb.textContent = colorRgb
 }
 
 function renderBoxColor() {
-    const boxesArr = Array.from(boxes)
-    boxesArr.sort(() => 0.5 - Math.random())
+    const boxesRgbArr = Array.from(boxesRgb)
+    boxesRgbArr.sort(() => 0.5 - Math.random())
 
-    const randomBox = Math.floor(Math.random() * boxesArr.length)
-    boxesArr[randomBox].style.backgroundColor = colorRgb
+    const randomBox = Math.floor(Math.random() * boxesRgbArr.length)
+    boxesRgbArr[randomBox].style.backgroundColor = colorRgb
 
-    boxesArr.forEach(box => {
+    boxesRgbArr.forEach(box => {
         for (let i = 0; i < 6; i++) {
-            if (box != boxesArr[randomBox]) {
+            if (box != boxesRgbArr[randomBox]) {
                 let r = Math.floor(Math.random() * 256)
                 let g = Math.floor(Math.random() * 256)
                 let b = Math.floor(Math.random() * 256)
@@ -54,22 +54,22 @@ function renderBoxColor() {
 }
 
 function setupBox() {
-    for (let i = 0; i < boxes.length; i++) {
-        boxes[i].addEventListener("click", (e) => {
+    for (let i = 0; i < boxesRgb.length; i++) {
+        boxesRgb[i].addEventListener("click", (e) => {
             let boxClicked = e.target.style
 
             if (boxClicked.backgroundColor === colorRgb) {
-                container.style.backgroundColor = colorRgb
-                resetBtn.value = "Jogar novamente"
-                message.textContent = "Acertou!"
+                containerRgb.style.backgroundColor = colorRgb
+                resetBtnRgb.value = "Jogar novamente"
+                messageRgb.textContent = "Acertou!"
 
-                for (let i = 0; i < boxes.length; i++) {
-                    boxes[i].style.backgroundColor = colorRgb
-                    boxes[i].style.opacity = 1
+                for (let i = 0; i < boxesRgb.length; i++) {
+                    boxesRgb[i].style.backgroundColor = colorRgb
+                    boxesRgb[i].style.opacity = 1
                 }
             } else {
                 boxClicked.opacity = 0
-                message.textContent = "Tente novamente!"
+                messageRgb.textContent = "Tente novamente!"
             }
         }) 
     }

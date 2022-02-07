@@ -1,8 +1,8 @@
-const colorDisplay = document.getElementById("colorDisplay")
-const container = document.querySelector(".container")
-const resetBtn = document.getElementById("reset")
-const message = document.getElementById("message")
-const boxes = document.querySelectorAll(".box")
+const colorDisplayHex = document.getElementById("colorDisplay")
+const containerHex = document.querySelector(".container")
+const resetBtnHex = document.getElementById("reset")
+const messageHex = document.getElementById("message")
+const boxesHex = document.querySelectorAll(".box")
 let items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]
 let colorHex = "#"
 
@@ -12,17 +12,17 @@ renderHexColor()
 renderBoxColor()
 setupBox()
 
-resetBtn.addEventListener("click", () => {
+resetBtnHex.addEventListener("click", () => {
     colorHex = "#"
     items.sort(() => 0.5 - Math.random())
-    container.style.backgroundColor = "rgba(153, 209, 231, 0.767)"
-    resetBtn.value = "Novas cores"
-    message.textContent = ""
+    containerHex.style.backgroundColor = "rgba(153, 209, 231, 0.767)"
+    resetBtnHex.value = "Novas cores"
+    messageHex.textContent = ""
     renderHexColor()
     renderBoxColor()
 
-    for (let i = 0; i < boxes.length; i++) {
-        boxes[i].style.opacity = 1
+    for (let i = 0; i < boxesHex.length; i++) {
+        boxesHex[i].style.opacity = 1
     }
 })
 
@@ -33,20 +33,20 @@ function renderHexColor() {
         colorHex += items[randomItem]
     }
 
-    colorDisplay.textContent = colorHex
+    colorDisplayHex.textContent = colorHex
 }
 
 function renderBoxColor() {
-    const boxesArr = Array.from(boxes)
-    boxesArr.sort(() => 0.5 - Math.random())
+    const boxesHexArr = Array.from(boxesHex)
+    boxesHexArr.sort(() => 0.5 - Math.random())
 
-    const randomBox = Math.floor(Math.random() * boxesArr.length)
-    boxesArr[randomBox].style.backgroundColor = colorHex
+    const randomBox = Math.floor(Math.random() * boxesHexArr.length)
+    boxesHexArr[randomBox].style.backgroundColor = colorHex
 
-    boxesArr.forEach(box => {
+    boxesHexArr.forEach(box => {
         let randomBoxColor = "#"
         for (let i = 0; i < 6; i++) {
-            if (box != boxesArr[randomBox]) {
+            if (box != boxesHexArr[randomBox]) {
                 let randomItem = Math.floor(Math.random() * items.length)
 
                 randomBoxColor += items[randomItem]
@@ -63,23 +63,23 @@ const hexToRgb = hex =>
         .map(x => parseInt(x, 16))
 
 function setupBox() {
-    for (let i = 0; i < boxes.length; i++) {
-        boxes[i].addEventListener("click", (e) => {
+    for (let i = 0; i < boxesHex.length; i++) {
+        boxesHex[i].addEventListener("click", (e) => {
             let boxClicked = e.target.style
             let hexToRgbColor = `rgb(${hexToRgb(colorHex).join(", ")})`
 
             if (boxClicked.backgroundColor === hexToRgbColor) {
-                container.style.backgroundColor = colorHex
-                resetBtn.value = "Jogar novamente"
-                message.textContent = "Acertou!"
+                containerHex.style.backgroundColor = colorHex
+                resetBtnHex.value = "Jogar novamente"
+                messageHex.textContent = "Acertou!"
 
-                for (let i = 0; i < boxes.length; i++) {
-                    boxes[i].style.backgroundColor = colorHex
-                    boxes[i].style.opacity = 1
+                for (let i = 0; i < boxesHex.length; i++) {
+                    boxesHex[i].style.backgroundColor = colorHex
+                    boxesHex[i].style.opacity = 1
                 }
             } else {
                 boxClicked.opacity = 0
-                message.textContent = "Tente novamente!"
+                messageHex.textContent = "Tente novamente!"
             }
         }) 
     }
