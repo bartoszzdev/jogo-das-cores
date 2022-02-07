@@ -88,3 +88,26 @@
     cursor: pointer;
     transition: opacity 700ms
 }
+
+@media screen and (max-width: 800px) {
+    .title h1 {
+        font-size: 30px;
+    }
+
+    #colorDisplay {
+        font-size: 35px;
+        letter-spacing: 0;
+    }
+
+    .info {
+        padding: 0 5%
+    }
+
+    .btn {
+        padding: 5px
+    }
+
+    #message {
+        display: none
+    }
+}

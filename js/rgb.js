@@ -27,7 +27,7 @@ function renderRgbColor() {
     let g = Math.floor(Math.random() * 256)
     let b = Math.floor(Math.random() * 256)
 
-    colorRgb = `rgb(${r}, ${g}, ${b})`
+    colorRgb = `rgb(${r},${g},${b})`
 
     colorDisplay.textContent = colorRgb
 }
@@ -46,7 +46,7 @@ function renderBoxColor() {
                 let g = Math.floor(Math.random() * 256)
                 let b = Math.floor(Math.random() * 256)
 
-                let randomColor = `rgb(${r}, ${g}, ${b})`
+                let randomColor = `rgb(${r},${g},${b})`
                 box.style.backgroundColor = randomColor
             }
         }
