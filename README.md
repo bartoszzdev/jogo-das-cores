@@ -9,3 +9,5 @@ Espero que curtem, e se tiver alguma sugestão para meu código só me chamar e 
 
 - In this project you'll try finding the respective color according to the RGB or hexadecimal code! I did it with HTML, CSS and Vanilla javaScript. 
 Hope you like it, and good luck! 🌈
+
+Confira o projeto de perto / Access the project itself: https://bartoszzdev.github.io/jogo-das-cores/
